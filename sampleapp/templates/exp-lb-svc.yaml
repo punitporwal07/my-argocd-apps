@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+  labels:
+    app: helm-guestbook
+    app.kubernetes.io/instance: sampleapp
+    chart: helm-guestbook-0.1.0
+    heritage: Helm
+    release: sampleapp
+  name: sampleapp-svc
+  namespace: myapps
+spec:
+  ports:
+    - nodePort: 30213
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: helm-guestbook
+    release: sampleapp
+  sessionAffinity: None
+  type: LoadBalancer
