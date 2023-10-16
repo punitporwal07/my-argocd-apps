@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: punitporwal07/sampleapp:1.0
-  tag: 0.1
-  pullPolicy: IfNotPresent
+  repository: punitporwal07/sampleapp
+  tag: 3.0
+  pullPolicy: Always
 
 service:
   type: ClusterIP
